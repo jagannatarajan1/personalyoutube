@@ -7,19 +7,20 @@ import HistoryOutlinedIcon from "@mui/icons-material/HistoryOutlined";
 import PlaylistPlayOutlinedIcon from "@mui/icons-material/PlaylistPlayOutlined";
 import WatchLaterOutlinedIcon from "@mui/icons-material/WatchLaterOutlined";
 import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
-// import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 const Sidemenu = () => {
-  // const toggleSideBar = useSelector((store) => store?.app?.isSidebarOpen);
-  // if (!toggleSideBar) return null;
+  const toggle = useSelector((store) => store.toggle.isSidebarOpen);
+  if (!toggle) return null;
   return (
     <div className="min-w-40 px-5 col-span-2 text-white">
       <ul className="py-2 text-left">
-        {/* <Link to="/"> */}
-        <li className="py-2">
-          <HomeIcon className="mr-6" />
-          Home
-        </li>
-        {/* </Link> */}
+        <Link to="/">
+          <li className="py-2">
+            <HomeIcon className="mr-6" />
+            Home
+          </li>
+        </Link>
         <li className="py-2">
           <OndemandVideoOutlinedIcon className="mr-6" />
           Shorts

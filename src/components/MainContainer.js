@@ -1,11 +1,11 @@
 import React from "react";
-import { YOUTUBE_VIDEO_API } from "../utils/contants";
 import ButtonList from "./ButtonList";
 import VidoeContainer from "./VidoeContainer";
+import { useSelector } from "react-redux";
 const MainContainer = () => {
-  console.log(YOUTUBE_VIDEO_API);
+  const toggle = useSelector((store) => store.toggle.isSidebarOpen);
   return (
-    <div className="col-span-10">
+    <div className={toggle ? "col-span-10" : "col-span-12"}>
       <ButtonList />
       <VidoeContainer />
     </div>

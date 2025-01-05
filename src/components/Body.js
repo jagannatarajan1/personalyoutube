@@ -1,12 +1,12 @@
 import React from "react";
 import Sidemenu from "./Sidemenu";
-import MainContainer from "./MainContainer";
+import { Outlet } from "react-router-dom";
 
 const Body = () => {
   return (
-    <div className=" grid grid-cols-12 bg-black">
+    <div className=" grid grid-cols-12 bg-black pt-20">
       <Sidemenu />
-      <MainContainer />
+      <Outlet />
     </div>
   );
 };
